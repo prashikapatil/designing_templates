@@ -1,0 +1,102 @@
+.header-container {
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-image {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    --mask:
+    radial-gradient(384.6px at 50% calc(100% - 526.5px),#000 99%,#0000 101%) calc(50% - 390px) 0/780px 100%,
+    radial-gradient(384.6px at 50% calc(100% + 331.5px),#0000 99%,#000 101%) 50% calc(100% - 195px)/780px 100% repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+.header-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+    background-color: black;
+    padding: 0 1rem;
+    margin-top: 2rem;
+}
+.sub_header_content{
+    display: flex;
+    justify-content: space-between;
+
+}
+.sub-header{
+color: #ffffff;
+margin-top: 10px;
+}
+.sub_header_list ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+margin-top: 5px;
+}
+.sub_header_list ul li{
+    margin: 0 10px !important;
+    color: #ffffff;
+}
+.sub_header_dropdown_button{
+    color: #ffffff;
+}
+.sub_header_button{
+    background: linear-gradient(to right, #7B68EE, #00BFFF);
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 5px 20px !important;
+    margin-top: 10px;
+    color: #ffffff;
+}
+.gradiant-bg {
+    background: linear-gradient(to right, #7B68EE, #00BFFF);
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 95%;
+    height: 200px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.card-body {
+    text-align: center;
+    padding: 1rem;
+}
+
+.card-title {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 0;
+    word-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 5px !important;
+    border:  #39FF14 1px solid;
+}

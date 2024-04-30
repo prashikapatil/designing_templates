@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../components/styles/brainyLingo.css';
 import { Gi3DStairs } from "react-icons/gi";
-import { Link } from "react-router-dom";
 
 export const BrainyLingo = () => {
     const [arr, setArr] = useState([]);
@@ -11,7 +10,6 @@ export const BrainyLingo = () => {
     useEffect(() => {
         axios.get('https://child.onrender.com/api/sciencefiction')
             .then((res) => {
-                console.log(res.data);
                 setArr(res.data);
                 setHeaderImageUrl(`https://ik.imagekit.io/dev24/${res.data[0]?.Image}`);
             })
@@ -23,12 +21,7 @@ export const BrainyLingo = () => {
     const getButtonColor = (index) => {
         if (index === 0 || index === 4) return 'blue';
         else if (index === 1 || index === 5) return 'orange';
-        else return ' #39FF14';
-    };
-    const getButtonBGColor = (index) => {
-        if (index === 0 || index === 4) return 'blue';
-        else if (index === 1 || index === 5) return 'orange';
-        else return ' #39FF14';
+        else return '#39FF14';
     };
 
     return (
@@ -44,20 +37,22 @@ export const BrainyLingo = () => {
                                 <li>Home</li>
                                 <li>LeaderBoard</li>
                                 <li>Daily Quiz</li>
-                                <li className="nav-item dropdown">
-                                    <Link className="nav-link dropdown-toggle sub_header_dropdown_button" to="#" role="button" data-bs-toggle="dropdown">Dropdown</Link>
-                                </li>
+                                {arr.length > 0 && (
+                                    <li className="nav-item dropdown">
+                                        <button className="nav-link dropdown-toggle sub_header_dropdown_button" data-bs-toggle="dropdown" style={{backgroundColor:'none'}}>Dropdown</button>
+                                    </li>
+                                )}
                             </ul>
                         </div>
-                        <div> <Link to="#" className={`btn sub_header_button`}>Sign Out</Link></div>
+                        <div> <button className={`btn sub_header_button`}>Sign Out</button></div>
                     </div>
                 </div>
                 <h1 className="header-title">Science Fiction Stories</h1>
                 <div className='container'>
                     <div className='row'>
                         {arr.slice(0, 4).map((items, index) => (
-                            <div className="col-sm-3">
-                                <Link to="#" className={`btn btn-primary`} style={{ backgroundColor: getButtonBGColor(index) }}><Gi3DStairs style={{ "marginRight": "10px", "fontSize": "20px" }} />{items.Status}</Link>
+                            <div key={index} className="col-sm-3">
+                                <button className={`btn btn-primary`} style={{ backgroundColor: getButtonColor(index) }}><Gi3DStairs style={{ "marginRight": "10px", "fontSize": "20px" }} />{items.Status}</button>
                             </div>
                         ))}
                     </div>
@@ -71,7 +66,7 @@ export const BrainyLingo = () => {
                                 <img className="card-img-top" src={`https://ik.imagekit.io/dev24/${items?.Image}`} alt="Card" />
                                 <div className="card-body">
                                     <h4 className="card-title">The Galactic Time Travelers</h4>
-                                    <Link to="#" className={`btn btn-primary`} style={{ color: getButtonColor(index) }}>{items.Status}</Link>
+                                    <button className={`btn btn-primary`} style={{ color: getButtonColor(index) }}>{items.Status}</button>
                                 </div>
                             </div>
                         </div>

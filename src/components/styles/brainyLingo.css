@@ -52,6 +52,8 @@ margin-top: 5px;
 }
 .sub_header_dropdown_button{
     color: #ffffff;
+    background-color: transparent;
+    border: none;
 }
 .sub_header_button{
     background: linear-gradient(to right, #7B68EE, #00BFFF);

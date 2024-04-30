@@ -44,8 +44,8 @@ export const BrainyLingo = () => {
                                 <li>Home</li>
                                 <li>LeaderBoard</li>
                                 <li>Daily Quiz</li>
-                                <li class="nav-item dropdown">
-                                    <Link class="nav-link dropdown-toggle sub_header_dropdown_button" to="#" role="button" data-bs-toggle="dropdown">Dropdown</Link>
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle sub_header_dropdown_button" to="#" role="button" data-bs-toggle="dropdown">Dropdown</Link>
                                 </li>
                             </ul>
                         </div>

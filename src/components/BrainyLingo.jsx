@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../components/styles/brainyLingo.css';
 import { Gi3DStairs } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 export const BrainyLingo = () => {
     const [arr, setArr] = useState([]);
@@ -44,11 +45,11 @@ export const BrainyLingo = () => {
                                 <li>LeaderBoard</li>
                                 <li>Daily Quiz</li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle sub_header_dropdown_button" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                                    <Link class="nav-link dropdown-toggle sub_header_dropdown_button" to="#" role="button" data-bs-toggle="dropdown">Dropdown</Link>
                                 </li>
                             </ul>
                         </div>
-                        <div> <a href="#" className={`btn sub_header_button`}>Sign Out</a></div>
+                        <div> <Link to="#" className={`btn sub_header_button`}>Sign Out</Link></div>
                     </div>
                 </div>
                 <h1 className="header-title">Science Fiction Stories</h1>
@@ -56,7 +57,7 @@ export const BrainyLingo = () => {
                     <div className='row'>
                         {arr.slice(0, 4).map((items, index) => (
                             <div className="col-sm-3">
-                                <a href="#" className={`btn btn-primary`} style={{ backgroundColor: getButtonBGColor(index) }}><Gi3DStairs style={{ "marginRight": "10px", "fontSize": "20px" }} />{items.Status}</a>
+                                <Link to="#" className={`btn btn-primary`} style={{ backgroundColor: getButtonBGColor(index) }}><Gi3DStairs style={{ "marginRight": "10px", "fontSize": "20px" }} />{items.Status}</Link>
                             </div>
                         ))}
                     </div>
@@ -70,7 +71,7 @@ export const BrainyLingo = () => {
                                 <img className="card-img-top" src={`https://ik.imagekit.io/dev24/${items?.Image}`} alt="Card" />
                                 <div className="card-body">
                                     <h4 className="card-title">The Galactic Time Travelers</h4>
-                                    <a href="#" className={`btn btn-primary`} style={{ color: getButtonColor(index) }}>{items.Status}</a>
+                                    <Link to="#" className={`btn btn-primary`} style={{ color: getButtonColor(index) }}>{items.Status}</Link>
                                 </div>
                             </div>
                         </div>
